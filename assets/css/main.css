@@ -88,7 +88,7 @@ ul li, ol li{
 }
 /*START PRELOADER DESIGN*/
 .preloader {
-	background: #3e09c4;
+	background: #05d2e5;
     bottom: 0;
     left: 0;
     position: fixed;
@@ -326,7 +326,7 @@ a.back-to-top:hover, a.back-to-top:focus{
     padding: 15px 0;
 }
 .navbar-brand p{
-    font-size: 30px;
+    font-size: 25px;
 	text-transform: capitalize;
     color: #fe4f6c;
     font-weight: 600;
@@ -337,7 +337,7 @@ a.back-to-top:hover, a.back-to-top:focus{
 }
 @media only screen and (max-width:768px){ 
 	.bg-faded {
-		background: #fff;
+		background: #191919;
 		animation: fadeInDown 1s both 0.2s;
 	}
 }
