@@ -88,7 +88,7 @@ ul li, ol li{
 }
 /*START PRELOADER DESIGN*/
 .preloader {
-	background: #3a3973;
+	background: #395473;
     bottom: 0;
     left: 0;
     position: fixed;
@@ -141,7 +141,7 @@ ul li, ol li{
 .hero-heading{
 	font-size: 48px;
 	font-weight: 700;
-	color: #fff;
+	color: #0c0b0b;
 	text-transform: capitalize;
 	line-height: 70px;
 	letter-spacing: 0.1rem;
