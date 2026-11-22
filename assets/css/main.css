@@ -572,12 +572,14 @@ a.back-to-top:hover, a.back-to-top:focus{
 #portfolio .mix{
 	padding: 10px;
 }
+/* Cards stay visible without JS. Once filtering is enabled, MixItUp controls visibility. */
+.js-filter .mix{
+	display: none;
+}
 #portfolio .portfolio-item .shot-item{
 	margin: 0px;
 }
-#portfolio .mix{
-	display: none;
-}
+/* Portfolio items are visible by default so content works without JavaScript. */
 .controls{
     text-align: center;
     padding-bottom: 30px;
