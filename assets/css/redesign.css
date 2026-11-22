@@ -685,3 +685,132 @@ a.back-to-top.is-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------- Responsive refinements ---------- */
+@media (max-width: 991px) {
+  .section-padding {
+    padding: 76px 0;
+  }
+
+  .banner_content {
+    margin-top: 56px;
+  }
+
+  .about-image img {
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background: rgba(13, 18, 36, 0.96) !important;
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    margin-top: 10px;
+    padding: 14px 0 !important;
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    color: var(--text) !important;
+    padding: 12px 20px !important;
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .navbar-light .navbar-nav .nav-link::after {
+    left: 20px;
+    right: 20px;
+  }
+
+  .banner_content {
+    text-align: center;
+    margin-top: 44px;
+    padding: 0 15px;
+  }
+
+  .banner_content h1 {
+    font-size: 32px !important;
+    line-height: 1.2;
+  }
+
+  .banner_content p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .about-image img {
+    max-width: 340px;
+    margin: 28px auto 0;
+  }
+
+  .section-title {
+    font-size: 25px;
+    margin-bottom: 38px !important;
+  }
+
+  .controls {
+    display: flex;
+    padding: 6px;
+    margin-bottom: 28px;
+  }
+
+  .controls .filter {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .portfolio-item {
+    padding: 0;
+    margin-bottom: 18px;
+  }
+
+  .overlay .icons p {
+    font-size: 13px;
+  }
+
+  .overlay .icons p + p {
+    font-size: 11px;
+    max-height: 4.4em;
+  }
+
+  .timeline-item,
+  .align-self-stretch.box,
+  .single_blog {
+    padding: 20px;
+  }
+
+  .footer-area {
+    padding: 26px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand p {
+    font-size: 15px;
+  }
+
+  .banner_content h1 {
+    font-size: 28px !important;
+  }
+
+  .controls .filter {
+    padding: 7px 11px;
+    font-size: 11px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .timeline-item,
+  .align-self-stretch.box,
+  .single_blog {
+    padding: 16px;
+  }
+}
