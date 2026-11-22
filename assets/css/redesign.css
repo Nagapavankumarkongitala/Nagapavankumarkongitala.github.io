@@ -512,7 +512,25 @@ a:focus-visible {
 
 .blog-info {
   padding: 18px 20px;
+  background: transparent;
+  border: 0;
   box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.blog-info p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-size: 13px;
+}
+
+.blog-info span {
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
 }
 
 .blog_btn {
@@ -563,6 +581,43 @@ a:focus-visible {
 
 .footer-area a:hover {
   color: var(--cyan);
+}
+
+/* Touch devices have no hover: keep project details reachable. */
+@media (hover: none) {
+  .shot-item .overlay {
+    position: static;
+    opacity: 1;
+    background: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    border-radius: 0 0 14px 14px;
+  }
+
+  .overlay .icons {
+    position: static;
+    inset: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .overlay .icons i {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 16px;
+  }
+
+  .overlay .icons p,
+  .overlay .icons p + p {
+    flex-basis: 100%;
+    max-height: none;
+    text-align: left;
+    overflow: visible;
+  }
 }
 
 /* ---------- Motion ---------- */
