@@ -1,42 +1,41 @@
 # Deployment Guide
 
-This guide provides detailed instructions on how to deploy the project for the Nagapavankumarkongitala.github.io repository.
+This site is a plain static site published with GitHub Pages. There is no build step, no `package.json`, and no backend.
 
-## Prerequisites
-- Ensure you have [Git](https://git-scm.com/) installed.
-- Install [Node.js](https://nodejs.org/) for build tools.
-- Have access to FTP or cloud service where the site will be hosted.
+## Local preview
 
-## Deployment Steps
-
-### Step 1: Clone the Repository
 ```bash
 git clone https://github.com/Nagapavankumarkongitala/Nagapavankumarkongitala.github.io.git
 cd Nagapavankumarkongitala.github.io
+python -m http.server 8765
 ```
 
-### Step 2: Install Dependencies
-If using npm or yarn for package management, run:
+Then open `http://localhost:8765/`.
+
+## Verify before publishing
+
 ```bash
-npm install
-# or
-yarn install
+python tools/verify_parity.py
+python tools/check_links.py
 ```
 
-### Step 3: Build the Project
-Build the project to prepare for deployment:
-```bash
-npm run build
-# or the relevant build command specific to your project
-```
+`verify_parity.py` confirms that all 17 portfolio projects still match `main` exactly and that the document has no duplicate IDs, empty image alt text, or anchors without `href`. `check_links.py` reports the HTTP status of every external link.
 
-### Step 4: Upload to Server
-Use the following methods for deployment:
-- **FTP**: Use an FTP client to upload the `dist` or `build` folder to your server.
-- **Cloud Services**: Follow deployment guidelines specific to your cloud provider (e.g., AWS S3, Heroku).
+Check in the browser that:
 
-### Step 5: Verification
-Visit your website's URL to ensure everything is functioning correctly.
+- all 17 project cards are visible
+- each portfolio filter shows the expected count (All 17, SQL 3, Python 5, Power BI 6, Excel 3, ML 2)
+- the contact email, phone and resume links work
+- there are no console errors or failed local asset requests
 
-## Troubleshooting
-- If you encounter issues, check the console for error messages and refer to the relevant documentation.
+## Publishing
+
+1. Commit changes on a feature branch.
+2. Merge into `main` only after review approval.
+3. Push `main` to `origin`.
+
+GitHub Pages serves the repository root automatically. `.nojekyll` is present so asset paths are never rewritten by Jekyll. Do not deploy from a build folder and do not use FTP.
+
+## Known external issue
+
+`https://github.com/Nagapavankumarkongitala/Cognorise_infotech_internship` currently returns HTTP 404. The link is retained verbatim at the owner's explicit instruction.
