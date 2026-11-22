@@ -236,6 +236,31 @@ a:focus-visible {
   border-radius: 50%;
 }
 
+a.back-to-top.is-visible {
+  display: block !important;
+}
+
+/* Filtering is opt-in: with JS the grid hides non-matching cards. */
+.js-filter .mix {
+  display: none;
+}
+
+.js-filter .mix.is-visible {
+  display: block;
+}
+
+/* Preloader is removed by JS; keep it harmless if scripts are blocked. */
+.preloader {
+  background: var(--bg);
+  transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /* ---------- Hero ---------- */
 .banner_content h3 {
   color: var(--text-muted);
@@ -621,6 +646,19 @@ a:focus-visible {
 }
 
 /* ---------- Motion ---------- */
+.js-motion .wow,
+.js-motion .ftco-animate,
+.js-motion .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.js-motion .is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .about-image img {
     animation: floaty 7s ease-in-out infinite;
@@ -631,17 +669,6 @@ a:focus-visible {
     50% { transform: translateY(-10px); }
   }
 
-  .services-item,
-  .portfolio-item,
-  .single_blog,
-  .timeline-item {
-    animation: settle 520ms both;
-  }
-
-  @keyframes settle {
-    from { opacity: 0; transform: translateY(14px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
