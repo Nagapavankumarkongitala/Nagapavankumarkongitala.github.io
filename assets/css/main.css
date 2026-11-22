@@ -473,12 +473,6 @@ a.back-to-top:hover, a.back-to-top:focus{
 .about-content{
 	margin-top: 15px;
 }
-.about-image img{
-    border-radius: 0px;
-	border: 5px solid #fe4f6c;
-    margin-top: 25px;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-}
 .about-content h3{
     font-size: 30px;
     font-weight: 600;

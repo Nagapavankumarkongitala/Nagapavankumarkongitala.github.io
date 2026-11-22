@@ -31,16 +31,31 @@
     var collapse = document.getElementById("navbarCollapse");
     if (!toggler || !collapse) return;
 
+    function close() {
+      collapse.classList.remove("show");
+      toggler.setAttribute("aria-expanded", "false");
+    }
+
     toggler.addEventListener("click", function () {
       var open = collapse.classList.toggle("show");
       toggler.setAttribute("aria-expanded", String(open));
     });
 
     collapse.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        collapse.classList.remove("show");
-        toggler.setAttribute("aria-expanded", "false");
-      });
+      link.addEventListener("click", close);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && collapse.classList.contains("show")) {
+        close();
+        toggler.focus();
+      }
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!collapse.classList.contains("show")) return;
+      if (collapse.contains(event.target) || toggler.contains(event.target)) return;
+      close();
     });
   }
 
